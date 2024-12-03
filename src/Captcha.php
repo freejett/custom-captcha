@@ -29,6 +29,7 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session as SSession;
 
 
 /**
@@ -280,7 +281,7 @@ class Captcha
         $this->configure($config);
 
         $generator = $this->generate();
-        $this->text = $generator['value'];
+        $this->text = session()->get('cd');
 
         $this->canvas = $this->imageManager->create($this->width , $this->height)->fill($this->fill);
 
