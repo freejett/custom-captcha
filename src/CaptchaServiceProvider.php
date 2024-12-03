@@ -1,6 +1,6 @@
 <?php
 
-namespace Mews\Captcha;
+namespace FreeJett\Captcha;
 
 use Illuminate\Routing\Router;
 use Illuminate\Validation\Factory;
