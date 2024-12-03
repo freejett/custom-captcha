@@ -1,6 +1,6 @@
 <?php
 
-namespace Mews\Tests\Captcha;
+namespace Freejett\Test\Captcha;
 
 use PHPUnit\Framework\TestCase;
 

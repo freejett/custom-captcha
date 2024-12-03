@@ -1,11 +1,11 @@
 <?php
 
-namespace Mews\Captcha\Facades;
+namespace FreeJett\Captcha\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Mews\Captcha\Captcha
+ * @see \FreeJett\Captcha\Captcha
  */
 class Captcha extends Facade
 {

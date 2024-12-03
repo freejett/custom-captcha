@@ -75,10 +75,11 @@ Find the `providers` key in `config/app.php` and register the Captcha Service Pr
     ]
 ```
 for Laravel 5.1+
+
 ```php
     'providers' => [
         // ...
-        Mews\Captcha\CaptchaServiceProvider::class,
+        FreeJett\Captcha\CaptchaServiceProvider::class,
     ]
 ```
 
@@ -91,10 +92,11 @@ Find the `aliases` key in `config/app.php`.
     ]
 ```
 for Laravel 5.1+
+
 ```php
     'aliases' => [
         // ...
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Captcha' => FreeJett\Captcha\Facades\Captcha::class,
     ]
 ```
 

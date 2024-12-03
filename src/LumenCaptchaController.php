@@ -1,6 +1,6 @@
 <?php
 
-namespace Mews\Captcha;
+namespace FreeJett\Captcha;
 
 use Exception;
 use Laravel\Lumen\Routing\Controller;
