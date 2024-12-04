@@ -29,11 +29,12 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session as SSession;
 
 
 /**
  * Class Captcha
- * @package Mews\Captcha
+ * @package FreeJett\Captcha
  */
 class Captcha
 {
@@ -258,12 +259,13 @@ class Captcha
     /**
      * Create captcha image
      *
+     * @param string|null $code
      * @param string $config
      * @param bool $api
      * @return array|mixed
      * @throws Exception
      */
-    public function create(string $config = 'default', bool $api = false)
+    public function create(string $code = null, string $config = 'default', bool $api = false)
     {
         $this->backgrounds = $this->files->files(__DIR__ . '/../assets/backgrounds');
         $this->fonts = $this->files->files($this->fontsDirectory);
@@ -280,7 +282,11 @@ class Captcha
         $this->configure($config);
 
         $generator = $this->generate();
-        $this->text = $generator['value'];
+        if ($code) {
+            $this->text = $code;
+        } else {
+            $this->text = $generator['value'];
+        }
 
         $this->canvas = $this->imageManager->create($this->width , $this->height)->fill($this->fill);
 
